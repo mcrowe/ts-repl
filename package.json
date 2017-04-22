@@ -21,7 +21,7 @@
   ],
   "bin": "./bin/ts-repl",
   "scripts": {
-    "prepublish": "tsc"
+    "build": "tsc"
   },
   "dependencies": {
     "colors": "^1.0.3",
