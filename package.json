@@ -1,6 +1,6 @@
 {
-  "name": "ts-repl",
-  "version": "0.0.1",
+  "name": "@mcrowe/ts-repl",
+  "version": "0.0.2",
   "description": "A Typescript REPL",
   "preferGlobal": true,
   "author": "Mitch Crowe",
@@ -21,6 +21,7 @@
   ],
   "bin": "./bin/ts-repl",
   "scripts": {
+    "start": "./bin/ts-repl",
     "build": "tsc"
   },
   "dependencies": {
