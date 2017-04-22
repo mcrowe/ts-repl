@@ -1,0 +1,43 @@
+{
+  "name": "tsun",
+  "version": "0.0.1",
+  "description": "A Typescript REPL",
+  "preferGlobal": true,
+  "author": "Mitch Crowe",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mcrowe/ts-repl.git"
+  },
+  "bugs": "https://github.com/mcrowe/ts-repl/issues",
+  "keywords": [
+    "typescript",
+    "repl",
+    "command line",
+    "interpreter"
+  ],
+  "files": [
+    "bin"
+  ],
+  "bin": "./bin/tsun",
+  "scripts": {
+    "prepublish": "tsc"
+  },
+  "dependencies": {
+    "colors": "^1.0.3",
+    "diff": "^2.2.3",
+    "node-color-readline": "^1.0.1",
+    "optimist": "^0.6.1",
+    "temp": "^0.8.1",
+    "tslib": "^1.0.0",
+    "@types/node": "^6.0.41"
+  },
+  "devDependencies": {
+    "@types/colors": "^0.6.33",
+    "@types/diff": "0.0.31",
+    "typescript": "^2.2.0"
+  },
+  "peerDependencies": {
+    "typescript": ">=2.0.0"
+  }
+}
