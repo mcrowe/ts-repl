@@ -1,5 +1,5 @@
 {
-  "name": "tsun",
+  "name": "ts-repl",
   "version": "0.0.1",
   "description": "A Typescript REPL",
   "preferGlobal": true,
@@ -17,9 +17,9 @@
     "interpreter"
   ],
   "files": [
-    "bin"
+    "bin", "lib"
   ],
-  "bin": "./bin/tsun",
+  "bin": "./bin/ts-repl",
   "scripts": {
     "prepublish": "tsc"
   },

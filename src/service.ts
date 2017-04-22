@@ -1,6 +1,6 @@
 import * as ts from 'typescript'
 import * as path from 'path'
-import { readdirSync, existsSync, readFileSync, statSync } from 'fs'
+import { existsSync, readFileSync } from 'fs'
 import * as diff from 'diff'
 import {assign} from './util'
 
@@ -113,19 +113,7 @@ export var getDeclarations = (function() {
 })()
 
 function getDeclarationFiles() {
-  var libPaths = [path.resolve(__dirname, '../../node_modules/@types/node/index.d.ts')]
-  try {
-    let typings = path.join(process.cwd(), './typings')
-    let dirs = readdirSync(typings)
-    for (let dir of dirs) {
-      if (!/\.d\.ts$/.test(dir)) continue
-      let p = path.join(typings, dir)
-      if (statSync(p).isFile()) {
-        libPaths.push(p)
-      }
-    }
-  } catch(e) {
-  }
+  var libPaths = [path.resolve(__dirname, '../node_modules/@types/node/index.d.ts')]
   return libPaths
 }
 

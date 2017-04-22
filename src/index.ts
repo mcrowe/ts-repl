@@ -1,10 +1,10 @@
 import * as tslib from 'tslib'
-import {assign} from './src/util'
+import {assign} from './util'
 assign(global, tslib)
 
-import './src/register'
+import './register'
 
-import {startRepl} from './src/repl'
+import {startRepl} from './repl'
 
 const options = require('optimist')
   .usage(`Usage:

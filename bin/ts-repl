@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-require('./ts-repl.js')
+require('../lib')

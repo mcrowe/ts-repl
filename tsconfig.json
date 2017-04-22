@@ -9,7 +9,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strictNullChecks": true,
-    "outDir": "bin"
+    "outDir": "lib"
   },
-  "exclude": ["node_modules", "bin"]
+  "exclude": ["node_modules", "bin", "lib"]
 }
