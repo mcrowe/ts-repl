@@ -118,8 +118,8 @@ function getDeclarationFiles() {
 }
 
 function getInitialCommands() {
-  return getDeclarationFiles()
-    .map(dir => `/// <reference path="${dir}" />\n`).join()
+  const lines = getDeclarationFiles().map(dir => `/// <reference path="${dir}" />`)
+  return lines.join('\n')
 }
 
 // private api hacks

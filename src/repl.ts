@@ -70,7 +70,7 @@ function colorize(line: string) {
 }
 
 function createReadLine() {
-  return readline.createInterface({
+  const rline = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
     colorize: colorize,
@@ -78,7 +78,35 @@ function createReadLine() {
       let code = multilineBuffer + '\n' + line
       return completer(code) as any
     }
-  })
+  }) as any
+
+
+  if (!fs.existsSync('.ts-repl-history')) {
+    fs.writeFileSync('.ts-repl-history', '', { flag: 'wx' })
+  }
+
+  var history = fs.readFileSync('.ts-repl-history', "utf8").toString().split("\n").slice(0, -1).reverse().slice(0, 100)
+
+  var oldAddHistory = rline._addHistory
+
+  rline._addHistory = function() {
+
+    var last = rline.history[0];
+
+    var line = oldAddHistory.call(rline);
+
+    if (line.length > 0 && line != last) {
+      fs.appendFileSync('.ts-repl-history', line + "\n");
+    }
+
+    return line
+  }
+
+  if (rline.history instanceof Array) {
+    rline.history.push.apply(rline.history, history)
+  }
+
+  return rline
 }
 
 // Much of this function is from repl.REPLServer.createContext
@@ -338,5 +366,8 @@ export function startRepl(libs: string[]) {
   for (let lib of libs) {
     context.require(lib)
   }
+
+  vm.runInContext('exports = {}', context)
+
   repl(defaultPrompt)
 }

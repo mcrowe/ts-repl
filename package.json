@@ -22,7 +22,8 @@
   "bin": "./bin/ts-repl",
   "scripts": {
     "start": "./bin/ts-repl",
-    "build": "tsc"
+    "build": "tsc",
+    "watch": "tsc -w"
   },
   "dependencies": {
     "colors": "^1.0.3",
@@ -37,8 +38,5 @@
     "@types/colors": "^0.6.33",
     "@types/diff": "0.0.31",
     "typescript": "^2.2.0"
-  },
-  "peerDependencies": {
-    "typescript": ">=2.0.0"
   }
 }
