@@ -1,6 +1,6 @@
 {
   "name": "@mcrowe/ts-repl",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Typescript REPL",
   "preferGlobal": true,
   "author": "Mitch Crowe",
