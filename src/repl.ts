@@ -334,6 +334,9 @@ export function repl(prompt: string) {
   })
 }
 
-export function startRepl() {
+export function startRepl(libs: string[]) {
+  for (let lib of libs) {
+    context.require(lib)
+  }
   repl(defaultPrompt)
 }
